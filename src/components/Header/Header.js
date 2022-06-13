@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../img/space-logo.png';
 import './Header.css';
 
@@ -10,9 +10,9 @@ const Header = () => (
       <h1>Space Traveler&lsquo;s Hub</h1>
       <nav>
         <ul>
-          <li><Link to="/">Rockets</Link></li>
-          <li><Link to="Missions">Missions</Link></li>
-          <li>My Profile</li>
+          <li><NavLink className={({ isActive }) => (isActive ? 'link-active' : 'link')} to="/">Rockets</NavLink></li>
+          <li><NavLink className={({ isActive }) => (isActive ? 'link-active' : 'link')} to="Missions">Missions</NavLink></li>
+          <li><NavLink className={({ isActive }) => (isActive ? 'link-active' : 'link')} to="MyProfile">My Profile</NavLink></li>
         </ul>
       </nav>
     </header>
