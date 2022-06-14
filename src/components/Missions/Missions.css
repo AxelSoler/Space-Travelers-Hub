@@ -1,0 +1,18 @@
+.tableUl {
+  list-style: none;
+  text-align: center;
+}
+
+.table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tableLi {
+  display: grid;
+  grid-template-columns: 10% auto 10% 10%;
+}
+
+.gridItem {
+  border: 1px solid gray;
+}
