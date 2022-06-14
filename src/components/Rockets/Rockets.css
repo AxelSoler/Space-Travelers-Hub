@@ -1,0 +1,14 @@
+.rocket-holder {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+
+.img-holder img {
+  width: 250px;
+}
+
+.data-rocket {
+  flex: 1;
+}
