@@ -1,15 +1,15 @@
-import { React, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { getListOfMissions } from '../../redux/missions/missions';
+import store from '../../redux/configureStore';
 import Mission from './Mission';
 import './Missions.css';
 
 const Missions = () => {
   const listOfMissions = useSelector((state) => state.listOfMissions);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getListOfMissions());
-  }, [dispatch]);
+  if (listOfMissions.length === 0) {
+    store.dispatch(getListOfMissions());
+  }
 
   return (
     <div className="table">
@@ -24,9 +24,7 @@ const Missions = () => {
           <Mission
             key={miss.id}
             mission={miss.mission}
-            desciption={miss.desciption}
-            status={miss.status}
-            empty={miss.empty}
+            description={miss.description}
           />
         ))}
       </ul>

@@ -28,8 +28,6 @@ export const getListOfMissions = () => async (dispatch) => {
         id: element.mission_id,
         mission: element.mission_name,
         description: element.description,
-        status: 'Status',
-        empty: 'Empty',
       },
     );
   });
