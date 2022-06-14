@@ -1,4 +1,5 @@
 import React from 'react';
+import Mission from './Mission';
 import './Missions.css';
 
 const Missions = () => {
@@ -43,12 +44,13 @@ const Missions = () => {
           <h3 className="gridItem">Empty</h3>
         </li>
         {missionHistory.map((miss) => (
-          <li key={miss.id} className="tableLi">
-            <h3 className="gridItem">{miss.mission}</h3>
-            <p className="gridItem">{miss.desciption}</p>
-            <h4 className="gridItem">{miss.status}</h4>
-            <button className="gridItem" type="button">{miss.empty}</button>
-          </li>
+          <Mission
+            key={miss.id}
+            mission={miss.mission}
+            desciption={miss.desciption}
+            status={miss.status}
+            empty={miss.empty}
+          />
         ))}
       </ul>
     </div>
