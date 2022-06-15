@@ -9,24 +9,27 @@ const Mission = (props) => {
   } = props;
   const dispatch = useDispatch();
   const [isActive, setActive] = useState('false');
+  const [member, setMember] = useState('NOT A MEMBER');
 
   const join = (e) => {
     const missionid = e.target.parentElement.id;
     dispatch(joinMission(missionid));
     setActive(!isActive);
+    setMember('ACTIVE MEMBER');
   };
 
   const leave = (e) => {
     const missionid = e.target.parentElement.id;
     dispatch(leaveMission(missionid));
     setActive(!isActive);
+    setMember('NOT A MEMBER');
   };
 
   return (
     <li id={id} className="tableLi">
       <h3 className="gridItem">{mission}</h3>
       <p className="gridItem descriptionP">{description}</p>
-      <h4 className="gridItem">NOT A MEMBER</h4>
+      <h4 className="gridItem">{member}</h4>
       <button className={isActive ? 'gridItem' : 'inactive'} type="button" onClick={join}>Join Mission</button>
       <button className={isActive ? 'inactive' : 'gridItem'} type="button" onClick={leave}>Leave Mission</button>
     </li>
