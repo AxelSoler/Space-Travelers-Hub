@@ -25,6 +25,7 @@ const Missions = () => {
             key={miss.id}
             mission={miss.mission}
             description={miss.description}
+            id={miss.id}
           />
         ))}
       </ul>
