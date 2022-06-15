@@ -16,6 +16,13 @@ const missionssReducer = (state = listOfMissions, action) => {
       });
       return newState;
     }
+    case LEAVE_MISSION: {
+      const newState = state.map((mission) => {
+        if (mission.id !== action.payload) return mission;
+        return { ...mission, join: false };
+      });
+      return newState;
+    }
     default:
       return state;
   }
