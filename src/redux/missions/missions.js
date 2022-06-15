@@ -9,9 +9,9 @@ const missionssReducer = (state = listOfMissions, action) => {
     case GET_MISSION:
       return [...state, ...action.payload];
     case JOIN_MISSION: {
-      const newState = state.forEach((mission) => {
+      const newState = state.map((mission) => {
         if (mission.id !== action.payload) return mission;
-        return { ...mission, reserved: true };
+        return { ...mission, join: true };
       });
       return newState;
     }
