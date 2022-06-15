@@ -26,6 +26,7 @@ const Missions = () => {
             mission={miss.mission}
             description={miss.description}
             id={miss.id}
+            join={miss.join}
           />
         ))}
       </ul>
