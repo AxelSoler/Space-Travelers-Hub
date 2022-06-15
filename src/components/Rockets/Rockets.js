@@ -10,7 +10,7 @@ const Rockets = (props) => {
   } = props;
 
   const [isActive, setIsActive] = useState(false);
-  
+
   const dispatch = useDispatch();
 
   const bookRocketHandler = () => {
