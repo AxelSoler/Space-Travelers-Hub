@@ -1,4 +1,5 @@
 const GET_MISSION = 'space-travelers-hub/missions/GET_MISSION';
+const JOIN_MISSION = 'space-travelers-hub/missions/JOIN_MISSION';
 
 const listOfMissions = [];
 const urlMissions = 'https://api.spacexdata.com/v3/missions';
@@ -7,6 +8,13 @@ const missionssReducer = (state = listOfMissions, action) => {
   switch (action.type) {
     case GET_MISSION:
       return [...state, ...action.payload];
+    case JOIN_MISSION: {
+      const newState = state.forEach((mission) => {
+        if (mission.id !== action.payload) return mission;
+        return { ...mission, reserved: true };
+      });
+      return newState;
+    }
     default:
       return state;
   }
@@ -15,6 +23,11 @@ const missionssReducer = (state = listOfMissions, action) => {
 export const getMission = (mission) => ({
   type: GET_MISSION,
   payload: mission,
+});
+
+export const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  payload: id,
 });
 
 export const getListOfMissions = () => async (dispatch) => {
