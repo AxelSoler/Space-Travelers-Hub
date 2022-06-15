@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 .tableUl {
   list-style: none;
   text-align: center;
@@ -10,9 +14,42 @@
 
 .tableLi {
   display: grid;
-  grid-template-columns: 10% auto 10% 10%;
+  grid-template-columns: 13% auto 11% 11%;
 }
 
 .gridItem {
   border: 1px solid gray;
+  height: 150px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.inactive {
+  display: none;
+}
+
+.descriptionP {
+  overflow-y: scroll;
+}
+
+/* width */
+.descriptionP::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.descriptionP::-webkit-scrollbar-track {
+  background: rgba(5, 81, 14, 0.7);
+}
+
+/* Handle */
+.descriptionP::-webkit-scrollbar-thumb {
+  background: rgb(189, 22, 22);
+}
+
+/* Handle on hover */
+.descriptionP::-webkit-scrollbar-thumb:hover {
+  background: rgb(23, 140, 42);
 }
