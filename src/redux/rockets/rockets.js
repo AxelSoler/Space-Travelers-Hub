@@ -1,34 +1,40 @@
-const CHECKROCKETS = 'space-travelers/rockets/CHECKROCKETS';
-const initialState = [
-  {
-    id: 1,
-    name: 'Falcon 1',
-    description: 'The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.',
-    img: 'https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg',
-  },
-  {
-    id: 2,
-    name: 'Falcon 1',
-    description: 'The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.',
-    img: 'https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg',
-  },
-  {
-    id: 3,
-    name: 'Falcon 1',
-    description: 'The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.',
-    img: 'https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg',
-  },
-];
+const GETROCKETS = 'space-travelers/rockets/CHECKROCKETS';
+const url = 'https://api.spacexdata.com/v3/rockets';
 
-export function rocketReducer(state = initialState, action) {
+export function rocketReducer(state = [], action) {
   switch (action.type) {
-    case CHECKROCKETS:
-      return 'Rockets';
+    case GETROCKETS:
+      return [...action.rockets];
     default:
       return state;
   }
 }
 
-export const checkRock = () => ({
-  type: CHECKROCKETS,
+export const getRockets = (rockets) => ({
+  type: GETROCKETS,
+  rockets,
 });
+
+export const fetchRockets = () => (dispatch) => {
+  const rocketsList = [];
+  fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      result.forEach((element) => {
+        rocketsList.push({
+          id: element.id,
+          name: element.rocket_name,
+          description: element.description,
+          type: element.engines.type,
+          img: element.flickr_images[0],
+        });
+      });
+      dispatch(getRockets(rocketsList));
+    });
+};
