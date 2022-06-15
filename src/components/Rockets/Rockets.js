@@ -32,10 +32,24 @@ const Rockets = (props) => {
       </div>
       <div className="data-rocket">
         <div className="name-holder">{name}</div>
-        <div className="description-holder">{description}</div>
+        <div className="description-holder">
+          {isActive && (
+            <div>
+              <p>
+                <span className="reserved">Reserved </span>
+                {description}
+              </p>
+            </div>
+          )}
+          {!isActive && (
+            <div>
+              <p>{description}</p>
+            </div>
+          )}
+        </div>
+        { !isActive && (
         <button
           type="button"
-          className={isActive ? 'no-active' : 'active'}
           onClick={() => {
             bookRocketHandler();
             displayHandler();
@@ -43,9 +57,10 @@ const Rockets = (props) => {
         >
           Reserve Rocket
         </button>
+        ) }
+        {isActive && (
         <button
           type="button"
-          className={isActive ? 'active' : 'no-active'}
           onClick={() => {
             cancelRocketHandler();
             displayHandler();
@@ -53,6 +68,7 @@ const Rockets = (props) => {
         >
           Cancel Reservation
         </button>
+        )}
       </div>
     </div>
   );
