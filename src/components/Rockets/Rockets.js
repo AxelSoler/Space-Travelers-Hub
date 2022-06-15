@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux/es/exports';
 import './Rockets.css';
-import { bookRocket } from '../../redux/rockets/rockets';
+import { bookRocket, cancelRocket } from '../../redux/rockets/rockets';
 
 const Rockets = (props) => {
   const {
@@ -15,6 +15,10 @@ const Rockets = (props) => {
 
   const bookRocketHandler = () => {
     dispatch(bookRocket(id));
+  };
+
+  const cancelRocketHandler = () => {
+    dispatch(cancelRocket(id));
   };
 
   const displayHandler = () => {
@@ -42,7 +46,10 @@ const Rockets = (props) => {
         <button
           type="button"
           className={isActive ? 'active' : 'no-active'}
-          onClick={displayHandler}
+          onClick={() => {
+            cancelRocketHandler();
+            displayHandler();
+          }}
         >
           Cancel Reservation
         </button>

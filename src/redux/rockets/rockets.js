@@ -1,5 +1,6 @@
 const GETROCKETS = 'space-travelers/rockets/CHECKROCKETS';
 const BOOKROCKET = 'space-travelers/rockets/BOOKROCKET';
+const CANCELROCKET = 'space-travelers/rockets/CANCELROCKET';
 const url = 'https://api.spacexdata.com/v3/rockets';
 
 export function rocketReducer(state = [], action) {
@@ -12,6 +13,13 @@ export function rocketReducer(state = [], action) {
           return rocket;
         }
         return { ...rocket, reserved: true };
+      });
+    case CANCELROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.rocketToCancel) {
+          return rocket;
+        }
+        return { ...rocket, reserved: false };
       });
     default:
       return state;
@@ -26,6 +34,11 @@ export const getRockets = (rockets) => ({
 export const bookRocket = (id) => ({
   type: BOOKROCKET,
   rocketToBook: id,
+});
+
+export const cancelRocket = (id) => ({
+  type: CANCELROCKET,
+  rocketToCancel: id,
 });
 
 export const fetchRockets = () => (dispatch) => {
