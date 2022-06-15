@@ -12,3 +12,11 @@
 .data-rocket {
   flex: 1;
 }
+
+.no-active {
+  display: none;
+}
+
+.active {
+  display: block;
+}
