@@ -13,10 +13,8 @@
   flex: 1;
 }
 
-.no-active {
-  display: none;
+.reserved {
+  padding: 3px;
+  background-color: aqua;
 }
 
-.active {
-  display: block;
-}
