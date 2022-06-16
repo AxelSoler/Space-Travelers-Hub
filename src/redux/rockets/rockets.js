@@ -1,6 +1,6 @@
-const GETROCKETS = 'space-travelers/rockets/CHECKROCKETS';
-const BOOKROCKET = 'space-travelers/rockets/BOOKROCKET';
-const CANCELROCKET = 'space-travelers/rockets/CANCELROCKET';
+export const GETROCKETS = 'space-travelers/rockets/CHECKROCKETS';
+export const BOOKROCKET = 'space-travelers/rockets/BOOKROCKET';
+export const CANCELROCKET = 'space-travelers/rockets/CANCELROCKET';
 const url = 'https://api.spacexdata.com/v3/rockets';
 
 export function rocketReducer(state = [], action) {
