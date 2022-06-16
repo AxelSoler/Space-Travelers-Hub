@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import './myProfile.css';
 
 const MyProfile = () => {
   const listOfMissions = useSelector((state) => state.listOfMissions);
@@ -9,24 +10,31 @@ const MyProfile = () => {
 
   return (
     <div className="container">
-      <div className="rockets-joined">
+      <div className="joined">
         <h3>Rockets Joined</h3>
-        <div className="active-rockets">
+        <div className="active">
           <ul>
-            {
+            {listActiveRockets.length === 0 && (
+              <h4 className="notJoin">YOU HAVE NOT JOIN ANY MISSION</h4>
+            )}
+            {listActiveRockets.length > 0 && (
               listActiveRockets.map((rocket) => (
-                <div key={rocket.id}>{rocket.name}</div>
-              ))
-            }
+                <li className="listJoin" key={rocket.id}><h4>{rocket.name}</h4></li>))
+            )}
           </ul>
         </div>
       </div>
-      <div className="missions-joined">
+      <div className="joined">
         <h3>Missions Joined</h3>
-        <div>
+        <div className="active">
           <ul>
-            {allMissions.map((miss) => (
-              <div key={miss.id}><h4>{miss.mission}</h4></div>))}
+            {allMissions.length === 0 && (
+              <h4 className="notJoin">YOU HAVE NOT JOIN ANY MISSION</h4>
+            )}
+            {allMissions.length > 0 && (
+              allMissions.map((miss) => (
+                <li className="listJoin" key={miss.id}><h4>{miss.mission}</h4></li>))
+            )}
           </ul>
         </div>
       </div>
