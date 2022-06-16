@@ -44,6 +44,7 @@ const Rockets = (props) => {
         { !reserved && (
         <button
           type="button"
+          className="reserve-btn"
           onClick={() => {
             bookRocketHandler();
           }}
@@ -54,6 +55,7 @@ const Rockets = (props) => {
         {reserved && (
         <button
           type="button"
+          className="cancel-btn"
           onClick={() => {
             cancelRocketHandler();
           }}
