@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux/es/exports';
 import './Rockets.css';
@@ -6,10 +6,10 @@ import { bookRocket, cancelRocket } from '../../redux/rockets/rockets';
 
 const Rockets = (props) => {
   const {
-    name, img, description, id,
+    name, img, description, id, reserved,
   } = props;
 
-  const [isActive, setIsActive] = useState(false);
+  /* const [isActive, setIsActive] = useState(false); */
 
   const dispatch = useDispatch();
 
@@ -21,9 +21,9 @@ const Rockets = (props) => {
     dispatch(cancelRocket(id));
   };
 
-  const displayHandler = () => {
+  /*  const displayHandler = () => {
     setIsActive((current) => !current);
-  };
+  }; */
 
   return (
     <div className="rocket-holder">
@@ -33,7 +33,7 @@ const Rockets = (props) => {
       <div className="data-rocket">
         <div className="name-holder">{name}</div>
         <div className="description-holder">
-          {isActive && (
+          {reserved && (
             <div>
               <p>
                 <span className="reserved">Reserved </span>
@@ -41,29 +41,29 @@ const Rockets = (props) => {
               </p>
             </div>
           )}
-          {!isActive && (
+          {!reserved && (
             <div>
               <p>{description}</p>
             </div>
           )}
         </div>
-        { !isActive && (
+        { !reserved && (
         <button
           type="button"
           onClick={() => {
             bookRocketHandler();
-            displayHandler();
+            // displayHandler();
           }}
         >
           Reserve Rocket
         </button>
         ) }
-        {isActive && (
+        {reserved && (
         <button
           type="button"
           onClick={() => {
             cancelRocketHandler();
-            displayHandler();
+            // displayHandler();
           }}
         >
           Cancel Reservation
@@ -79,6 +79,9 @@ Rockets.propTypes = {
   img: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  reserved: PropTypes.bool,
 };
+
+Rockets.defaultProps = { reserved: false };
 
 export default Rockets;
