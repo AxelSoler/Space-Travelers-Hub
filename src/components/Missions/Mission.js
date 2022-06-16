@@ -28,18 +28,18 @@ const Mission = (props) => {
       <p className="gridItem descriptionP">{description}</p>
       <div className="gridItem">
         {join && (
-          <h4>ACTIVE MEMBER</h4>
+          <h4 className="activeMember">ACTIVE MEMBER</h4>
         )}
         {!join && (
-          <h4>NOT A MEMBER</h4>
+          <h4 className="notMember">NOT A MEMBER</h4>
         )}
       </div>
       <div className="gridItem">
         {!join && (
-          <button type="button" onClick={joinM}>Join Mission</button>
+          <button className="joinBtn" type="button" onClick={joinM}>Join Mission</button>
         )}
         {join && (
-          <button type="button" onClick={leaveM}>Leave Mission</button>
+          <button className="leaveBtn" type="button" onClick={leaveM}>Leave Mission</button>
         )}
       </div>
     </li>
