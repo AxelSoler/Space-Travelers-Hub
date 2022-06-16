@@ -24,8 +24,10 @@ const MyProfile = () => {
       <div className="missions-joined">
         <h3>Missions Joined</h3>
         <div>
-          {allMissions.map((miss) => (
-            <div key={miss.id}><h4>{miss.mission}</h4></div>))}
+          <ul>
+            {allMissions.map((miss) => (
+              <div key={miss.id}><h4>{miss.mission}</h4></div>))}
+          </ul>
         </div>
       </div>
     </div>
