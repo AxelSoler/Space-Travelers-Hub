@@ -33,7 +33,7 @@ exports[`a mission is rendering 1`] = `
         </li>
         <li>
           <a
-            className="link"
+            className="link profile"
             href="/MyProfile"
             onClick={[Function]}
           >
