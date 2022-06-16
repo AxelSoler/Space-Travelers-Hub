@@ -11,13 +11,13 @@ const Mission = (props) => {
   const [isActive, setActive] = useState('false');
 
   const joinM = (e) => {
-    const missionid = e.target.parentElement.id;
+    const missionid = e.target.parentElement.parentElement.id;
     dispatch(joinMission(missionid));
     setActive(!isActive);
   };
 
   const leaveM = (e) => {
-    const missionid = e.target.parentElement.id;
+    const missionid = e.target.parentElement.parentElement.id;
     dispatch(leaveMission(missionid));
     setActive(!isActive);
   };
