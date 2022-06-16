@@ -1,4 +1,6 @@
-import { getRockets, GETROCKETS, bookRocket, BOOKROCKET, cancelRocket, CANCELROCKET, rocketReducer } from '../redux/rockets/rockets'
+import {
+  getRockets, GETROCKETS, bookRocket, BOOKROCKET, cancelRocket, CANCELROCKET, rocketReducer,
+} from '../redux/rockets/rockets';
 
 // ACTION CREATORS TEST
 
@@ -11,8 +13,8 @@ it('should create an action with GETROCKETS type', () => {
     img: 'img',
   }];
   const expectation = {
-      type: GETROCKETS,
-      rockets,
+    type: GETROCKETS,
+    rockets,
   };
 
   expect(getRockets(rockets)).toEqual(expectation);
@@ -20,8 +22,8 @@ it('should create an action with GETROCKETS type', () => {
 
 it('should create an action with BOOKROCKET type', () => {
   const expectation = {
-      type: BOOKROCKET,
-      rocketToBook: 1,
+    type: BOOKROCKET,
+    rocketToBook: 1,
   };
 
   expect(bookRocket(1)).toEqual(expectation);
@@ -29,8 +31,8 @@ it('should create an action with BOOKROCKET type', () => {
 
 it('should create an action with CANCELROCKET type', () => {
   const expectation = {
-      type: CANCELROCKET,
-      rocketToCancel: 1,
+    type: CANCELROCKET,
+    rocketToCancel: 1,
   };
 
   expect(cancelRocket(1)).toEqual(expectation);
@@ -73,7 +75,7 @@ describe('test reducer rockets', () => {
       reserved: true,
     }];
     expect(rocketReducer(rockets, bookRocket(1))).toEqual(TrueRockets);
-  })
+  });
 
   it('should return the rocket with reserved false', () => {
     const rockets = [{
@@ -94,5 +96,5 @@ describe('test reducer rockets', () => {
       reserved: false,
     }];
     expect(rocketReducer(rockets, cancelRocket(1))).toEqual(falseRockets);
-  })
-})
+  });
+});
