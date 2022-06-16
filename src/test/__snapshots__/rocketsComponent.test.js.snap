@@ -25,6 +25,7 @@ exports[`Rockets Renders correctly 1`] = `
       </div>
     </div>
     <button
+      className="reserve-btn"
       onClick={[Function]}
       type="button"
     >

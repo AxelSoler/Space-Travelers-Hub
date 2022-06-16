@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets } from '../../redux/rockets/rockets';
 import Rockets from '../Rockets/Rockets';
+import './RocketList.css';
 
 const RocketList = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -12,7 +13,7 @@ const RocketList = () => {
   }
 
   return (
-    <ul>
+    <ul className="all-rockets">
       {
         rockets.map((rocket) => (
           <Rockets
