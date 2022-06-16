@@ -41,8 +41,6 @@ GitHub: [rega1237](https://github.com/rega1237)
 
 LinkedIn: [Rafael Guzman](https://www.linkedin.com/in/rafael-guzm%C3%A1n-arias-35002589/)
 
-Twitter: [Rafael Guzman]()
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
