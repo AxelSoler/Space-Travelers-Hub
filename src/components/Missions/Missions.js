@@ -18,7 +18,7 @@ const Missions = () => {
           <h3 className="gridItem">Mission</h3>
           <h3 className="gridItem">Description</h3>
           <h3 className="gridItem">Status</h3>
-          <h3 className="gridItem">Empty</h3>
+          <span className="gridItem" />
         </li>
         {listOfMissions.map((miss) => (
           <Mission

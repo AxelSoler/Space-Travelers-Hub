@@ -9,7 +9,7 @@
 
 .table {
   width: 90%;
-  margin: 0 auto;
+  margin: 48px auto;
 }
 
 .tableLi {
@@ -17,39 +17,19 @@
   grid-template-columns: 13% auto 11% 11%;
 }
 
+.tableLi:nth-child(even) {
+  background-color: rgb(185, 185, 185);
+}
+
 .gridItem {
   border: 1px solid gray;
-  height: 150px;
   display: grid;
   justify-content: center;
   align-content: center;
   text-align: center;
+  padding: 16px;
 }
 
 .inactive {
   display: none;
-}
-
-.descriptionP {
-  overflow-y: scroll;
-}
-
-/* width */
-.descriptionP::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-.descriptionP::-webkit-scrollbar-track {
-  background: rgba(5, 81, 14, 0.7);
-}
-
-/* Handle */
-.descriptionP::-webkit-scrollbar-thumb {
-  background: rgb(189, 22, 22);
-}
-
-/* Handle on hover */
-.descriptionP::-webkit-scrollbar-thumb:hover {
-  background: rgb(23, 140, 42);
 }
