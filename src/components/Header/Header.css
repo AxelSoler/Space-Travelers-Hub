@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  margin: 0 1.5rem;
+  border-bottom: solid 1px gray;
+}
+
+header img {
+  padding-left: 0.8rem;
+  width: 80px;
+}
+
+header h1 {
+  margin-left: 0.5rem;
+}
+
+header ul {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+header li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.link-active {
+  color: #00d7c6;
+  text-decoration: underline;
+}
+
+.profile {
+  border-left: solid 1px black;
+}

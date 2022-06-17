@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a mission is rendering 1`] = `
+<div>
+  <header>
+    <img
+      alt="logo"
+      src="space-logo.png"
+    />
+    <h1>
+      Space Traveler‘s Hub
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a
+            aria-current="page"
+            className="link-active"
+            href="/"
+            onClick={[Function]}
+          >
+            Rockets
+          </a>
+        </li>
+        <li>
+          <a
+            className="link"
+            href="/Missions"
+            onClick={[Function]}
+          >
+            Missions
+          </a>
+        </li>
+        <li>
+          <a
+            className="link profile"
+            href="/MyProfile"
+            onClick={[Function]}
+          >
+            My Profile
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+`;

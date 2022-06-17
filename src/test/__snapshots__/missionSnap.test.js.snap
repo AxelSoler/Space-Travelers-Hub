@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a mission is rendering 1`] = `
+<li
+  className="tableLi"
+  id="15"
+>
+  <h3
+    className="gridItem"
+  >
+    name of the mission
+  </h3>
+  <p
+    className="gridItem descriptionP"
+  >
+    mission description
+  </p>
+  <div
+    className="gridItem"
+  >
+    <h4
+      className="activeMember"
+    >
+      ACTIVE MEMBER
+    </h4>
+  </div>
+  <div
+    className="gridItem"
+  >
+    <button
+      className="leaveBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      Leave Mission
+    </button>
+  </div>
+</li>
+`;
