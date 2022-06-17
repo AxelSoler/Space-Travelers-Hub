@@ -1,3 +1,9 @@
+## space-travelers-hub
+
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+Web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions.
+
 ## Built With
 
 - Major languages: HTML, CSS, Javascript, React, Redux
@@ -53,9 +59,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Hat tip to the team
+- All partners from the morning session and standup who gave us some advises
+- Our mentors
 
 ## 📝 License
 
