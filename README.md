@@ -11,7 +11,7 @@ Web application for a company that provides commercial and scientific space trav
 
 ## Live Demo
 
-[Live Demo Link in progress]()
+[Live Demo Link](https://spiffy-marigold-45bbb6.netlify.app/)
 
 ## Getting Started
 
