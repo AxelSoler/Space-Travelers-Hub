@@ -10,7 +10,14 @@ describe('Rockets', () => {
       .create(
         <MemoryRouter>
           <Provider store={store}>
-            <Rockets />
+            <Rockets
+              id={1}
+              type="unicorn"
+              name="Falcon"
+              img="img"
+              description="description"
+              reserved
+            />
           </Provider>
         </MemoryRouter>,
       )

@@ -15,17 +15,25 @@ exports[`a mission is rendering 1`] = `
   >
     mission description
   </p>
-  <h4
+  <div
     className="gridItem"
   >
-    ACTIVE MEMBER
-  </h4>
-  <button
+    <h4
+      className="activeMember"
+    >
+      ACTIVE MEMBER
+    </h4>
+  </div>
+  <div
     className="gridItem"
-    onClick={[Function]}
-    type="button"
   >
-    Leave Mission
-  </button>
+    <button
+      className="leaveBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      Leave Mission
+    </button>
+  </div>
 </li>
 `;

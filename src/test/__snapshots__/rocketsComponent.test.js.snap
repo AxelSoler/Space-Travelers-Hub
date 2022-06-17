@@ -9,6 +9,7 @@ exports[`Rockets Renders correctly 1`] = `
   >
     <img
       alt="rocket"
+      src="img"
     />
   </div>
   <div
@@ -16,20 +17,29 @@ exports[`Rockets Renders correctly 1`] = `
   >
     <div
       className="name-holder"
-    />
+    >
+      Falcon
+    </div>
     <div
       className="description-holder"
     >
       <div>
-        <p />
+        <p>
+          <span
+            className="reserved"
+          >
+            Reserved 
+          </span>
+          description
+        </p>
       </div>
     </div>
     <button
-      className="reserve-btn"
+      className="cancel-btn"
       onClick={[Function]}
       type="button"
     >
-      Reserve Rocket
+      Cancel Reservation
     </button>
   </div>
 </div>
